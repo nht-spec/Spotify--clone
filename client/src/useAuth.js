@@ -7,7 +7,7 @@ export default function useAuth(code) {
     const [expiresIn, setExpiresIn] = useState()
 
     useEffect(() => {
-     axios.post('https://naturalshop-api.herokuapp.com/login', {
+     axios.post('http://localhost:3001/login', {
          code,
     })
      .then(res => {
@@ -24,7 +24,7 @@ export default function useAuth(code) {
     useEffect(() => {
         if(!refreshToken || !expiresIn) return
         const interval = setInterval(() =>{
-            axios.post('https://naturalshop-api.herokuapp.com/refresh', {
+            axios.post('http://localhost:3001/refresh', {
                 refreshToken,
            })
             .then(res => {
