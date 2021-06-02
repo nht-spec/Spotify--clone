@@ -24,7 +24,7 @@ export default function Dashboard({code}) {
     useEffect(() => {
         if(!playingTrack) return;
         axios
-        .get("http://localhost:3001/lyrics", {
+        .get("https://naturalshop-api.herokuapp.com/lyrics", {
             params: {
                 track: playingTrack.title,
                 artist: playingTrack.artist,
